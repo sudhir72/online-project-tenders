@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Online Project tenders</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../styles.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">
+function checkForm(formObj) 
+{
+ if(checkProjectNo(formObj.projectNo.value))
+	{
+     if( checkProjectName(formObj.projectName.value))
+			{
+			if(checkBuyerName(formObj.buyerName.value)) 
+		      {
+		        return checkRangeofBid(formObj.rangeofBid.value);
+		      }
+		    else 
+		   return false; 
+		}
+		else
+		return false;
+	}
+	return true;
+}
+function checkProjectNo(phone) 
+{
+    if (phone.length == 0) {
+ 	window.alert("You must provide a number.");
+	return false;
+	}
+	for (i=0; i<phone.length; i++)
+	 {
+	if (phone.charAt(i) < "0" || phone.charAt(i) > "9")
+	 {
+	  window.alert("Project id must only contain numbers.");
+	return false;
+	}
+	}
+return true;
+}
+
+function checkRangeofBid(phone) 
+{
+    if (phone.length == 0) {
+ 	window.alert("You must provide a number in dollars.");
+	return false;
+	}
+	for (i=0; i<phone.length; i++)
+	 {
+	if (phone.charAt(i) < "0" || phone.charAt(i) > "9")
+	 {
+	  window.alert("Phone numbers must only contain numbers.");
+	return false;
+	}
+	}
+return true;
+}
+
+function checkProjectName(age)
+{
+if(age.length==0)
+   {
+      window.alert("plZ enter project name");
+      return false;  
+    }
+ return true;
+}
+function checkBuyerName(parameter)
+{
+  alert(parameter);
+ if(parameter.length==0)
+  { 
+  window.alert("please Enter buyer name.");
+  return false;
+   }
+return true;
+}
+</script>
+</head>
+<body>
+<div id="content">
+<div id="back">
+<!-- header begins -->
+<div id="header"> 
+	<div id="logo">
+		<h1 align="center"><a href="#"> <FONT SIZE="20" COLOR="#000000">Online Project tenders</FONT> </a></h1>
+		<h2><a href="http://www.metamorphozis.com/" id="metamorph"><marquee>Globalize the world</marquee></a></h2>
+	</div>
+  <div id="menu">
+		<ul>
+			<li id="button1"><a href="../index3.html"  title="">Home</a></li>
+			<li id="button2"><a href="inbox1.jsp" title="">inbox</a></li>
+			<li id="button3"><a href="userprofile.jsp"  title="">View profile</a></li>
+			<li id="button4"><a href="view_tender.jsp"  title="">view tenders</a></li>
+			<li id="button5"><a href="../logout.jsp"  title="">logout</a></li>
+		</ul>
+ </div>
+</div>
+
+<!-- header ends -->
+<!-- content begins -->
+ <FONT SIZE="10" COLOR="#003366">Welcome to programmer</FONT>
+<div id="footer">
+Copyright &copy; 2008.Privacy Policy | Terms of Use
+	</div>
+<!-- footer ends-->
+</body>
+</html>

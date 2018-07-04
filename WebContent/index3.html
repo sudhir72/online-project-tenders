@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Online Project tenders</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript">
+function checkForm(formObj) 
+{
+     if(checkUserName(formObj.userName.value)) 
+       {
+        return checkPassword(formObj.password.value);
+       }
+  return false;
+}
+function checkUserName(age)
+{
+if(age.length==0)
+   {
+      window.alert("please enter user name");
+      return false;  
+    }
+ return true;
+}
+function checkPassword(parameter)
+{
+ if(parameter.length==0)
+  { 
+  window.alert("please Enter password.");
+  return false;
+   }
+return true;
+}
+
+</script>
+</head>
+<body >
+<div id="content">
+<div id="back">
+<!-- header begins -->
+<div id="header"> 
+	<div id="logo">
+		<h1 align="center"> <FONT SIZE="20" COLOR="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Project tenders</FONT> </h1>
+		<h2><marquee>Globalize the world</marquee></h2>
+	</div>
+  <div id="menu">
+		<ul>
+			<li id="button1"><a href="index3.html" title="">Home</a></li>
+			<li id="button4"><a href="about.html" title="about">About</a></li>
+			<li id="button5"><a href="contact.html" title="">Contact</a></li>
+		</ul>
+ </div>
+</div>
+<form name="myForm" method="post" onsubmit="return checkForm(this)" action="VerifyDetails.jsp">
+
+<br/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table border="0" align="left">
+<tr><td>
+<font size="4">
+<legend>
+<font color="bisque" size="3"><b><pre>    My logo </pre></b></font>
+</legend>
+</font></td></tr>
+<tr><td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/business_travel.jpg"  alt="logo"></td></tr>
+</table>
+
+<table border="0" width="40%" align="right">
+<tr>
+<td>
+<fieldset>
+<p>
+<font size="5">
+<legend>
+<font color="bisque" size="2"><b>SIGN IN AS</b></font>
+</legend>
+</font>
+</p>
+<title>signin</title>
+<font color="bisque" size="2">
+ USERNAME :<input type="text"  name="userName" size="20">*<br><br></font>
+
+
+<font color="bisque" size="2">
+ PASSWORD :<input type="password" value="" name="password" size="20">*</font><br><br>
+<font color="bisque" size="2">     USERTYPE    :&nbsp;<select name="userType" size="1">
+			<option value="buyer">Buyer</option>
+			<option value="programmer">Programmer</option>
+		</select></font><br>
+		<br>
+		<input type="submit" value="submit">
+<br>
+		<br>
+		<font color=#aaff00><b>NEW USER?</b></font><br>
+		<br>
+
+       <a href="index2.html"><font color=#aaff00 size="4">Register
+		now!</font></a>
+
+</fieldset>
+
+</td>
+</tr>
+</table>
+</form>
+<!-- header ends -->
+<!-- content begins -->
+ </div>
+ </div>
+
+<div id="footer">
+
+	</div>
+<!-- footer ends-->
+</body>
+</html>

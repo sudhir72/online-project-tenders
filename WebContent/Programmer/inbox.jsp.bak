@@ -1,0 +1,52 @@
+<%@ page import="java.sql.*" %>
+<%@ include file="../Make_Conn.jsp" %>
+<%
+
+
+	String user=(String)session.getValue("user");
+
+
+
+		String q="Select * from inbox where username='"+user+"'";
+System.out.println(q);
+       ResultSet rs=st.executeQuery(q);
+	   ResultSetMetaData rsmd=rs.getMetaData();
+
+	   int n=rsmd.getColumnCount();
+%>
+<table border="2" align="center">
+ <tr>
+     
+ <%
+        for(int i=1;i<=n;i++)
+		{
+			
+		
+		out.println("<td>" + rsmd.getColumnName(i) +"</td>");
+		
+
+		}
+
+		while(rs.next())
+		{
+
+			 System.out.println(rs.getString(1));
+%>
+</tr><tr>
+
+ <%
+	 
+								for(int i=1;i<=n;i++)
+			{
+		   
+	out.println("<td>" + rs.getString(i) +"</td>");
+			}
+		%>
+		</tr>
+			<%
+		
+		}
+
+		
+		
+%>

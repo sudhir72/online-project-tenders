@@ -1,0 +1,77 @@
+<html>
+<head>
+<script type="text/javascript">
+function validate()
+ {
+
+	  if(document.f1.ex_amt.value=="")
+     {
+		  alert("enter amount");
+		  document.f1.tender_amt.focus();
+		return false;
+	 }
+	 if((document.f1.tender_amt.value)>=200)
+	 {
+		 alert("enter min amount than exp amt");
+		 document.f1.tender_amt.focus();
+		 return false;
+	 }
+	 else
+		 return true;
+ }
+ </script>
+ </head>
+ <body>
+ <form name="f1" action="Add_tender.jsp?pid=<%=pid%>" method="post" align="center" onsubmit="return validate()" >
+
+ <table border="1" align="center">
+ <tr>
+
+
+ <td> Project  Description</td>
+ <td> <TEXTAREA NAME="pro_desc" ROWS="10" COLS="50" readonly><%=rs.getString(1)%></TEXTAREA></td>
+
+ </tr>
+<%
+ String t="select * from tenders1 where project_id='"+pid+"'";
+ ResultSet rs1=st.executeQuery(t);
+ int amt=0;
+
+if(rs1.next())
+{
+
+ 
+String r="select min(tender_amount) from tenders1";
+
+ ResultSet rs2=st.executeQuery(r);
+
+rs2.next();
+
+amt=rs2.getInt(1);
+
+}
+else
+{
+amt=amt_ten;
+}
+ %>
+ <tr>
+ <td> Expected amount</td>
+ <td><input type="text" value=200 name="ex_amt" readonly ></td>
+  </tr>
+ <tr>
+
+ <td>Enter Your Tender Amount</td> 
+ <td><input type="text" name="tender_amt"></td>
+ </tr>
+ 
+ <TR >
+ 	<TD ><INPUT TYPE="submit" value="Submit"></TD>
+ </TR>
+ 
+ </table>
+
+ </form>
+
+ </body>
+ </html>
